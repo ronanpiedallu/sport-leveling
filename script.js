@@ -78,6 +78,8 @@ function applyTheme() {
   // logo
   document.getElementById("logo").src =
     data.theme === "green" ? "logo-green.png" : "logo-blue.png";
+
+   updateAllButtons();
 }
 
 // --- XP ---
@@ -103,7 +105,7 @@ function renderQuests() {
 
     const btn = document.createElement("button");
     btn.innerText = q.done ? "✔ DONE" : "Valider";
-    btn.className = getButtonClass();
+    btn.classList.add(getButtonClass());
 
     btn.onclick = () => {
       if (!q.done) {
@@ -117,6 +119,14 @@ function renderQuests() {
     div.innerHTML = `<p>${q.name} (+${q.xp} XP)</p>`;
     div.appendChild(btn);
     container.appendChild(div);
+  });
+}
+
+function updateAllButtons() {
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach(btn => {
+    btn.classList.remove("green-btn", "blue-btn");
+    btn.classList.add(getButtonClass());
   });
 }
 
