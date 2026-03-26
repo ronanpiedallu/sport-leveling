@@ -55,6 +55,10 @@ function save() {
 }
 
 // --- Thème ---
+function getButtonClass() {
+  return data.theme === "green" ? "green-btn" : "blue-btn";
+}
+
 function toggleTheme() {
   data.theme = data.theme === "green" ? "blue" : "green";
   applyTheme();
@@ -63,8 +67,17 @@ function toggleTheme() {
 
 function applyTheme() {
   const color = data.theme === "green" ? "#22c55e" : "#3b82f6";
+
   document.body.style.color = color;
   document.getElementById("xpFill").style.background = color;
+
+  // boutons
+  document.getElementById("themeBtn").className = getButtonClass();
+  document.getElementById("addBtn").className = getButtonClass();
+
+  // logo
+  document.getElementById("logo").src =
+    data.theme === "green" ? "logo-green.png" : "logo-blue.png";
 }
 
 // --- XP ---
@@ -90,6 +103,7 @@ function renderQuests() {
 
     const btn = document.createElement("button");
     btn.innerText = q.done ? "✔ DONE" : "Valider";
+    btn.className = getButtonClass();
 
     btn.onclick = () => {
       if (!q.done) {
