@@ -7,9 +7,11 @@ body {
   margin: auto;
 }
 
-h1 {
-  text-align: center;
-  font-size: 32px;
+.logo {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: auto;
 }
 
 button {
@@ -18,6 +20,15 @@ button {
   margin-top: 10px;
   border: none;
   font-weight: bold;
+  color: black;
+}
+
+.green-btn {
+  background: #22c55e;
+}
+
+.blue-btn {
+  background: #3b82f6;
 }
 
 .card {
@@ -34,7 +45,6 @@ button {
 
 #xpFill {
   height: 100%;
-  background: #22c55e;
   width: 0%;
 }
 
