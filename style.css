@@ -2,17 +2,47 @@ body {
   background: black;
   color: #22c55e;
   font-family: monospace;
-  padding: 20px;
+  padding: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
 }
 
 button {
-  padding: 10px;
-  margin: 5px;
-  cursor: pointer;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  font-weight: bold;
 }
 
 .card {
   border: 1px solid;
   padding: 10px;
-  margin: 10px 0;
+  margin-top: 10px;
+}
+
+#xpBar {
+  height: 12px;
+  background: #111;
+  margin-top: 10px;
+}
+
+#xpFill {
+  height: 100%;
+  background: #22c55e;
+  width: 0%;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: black;
+  color: white;
+  border: 1px solid #444;
 }
